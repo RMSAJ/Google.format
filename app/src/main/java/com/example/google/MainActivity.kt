@@ -27,20 +27,20 @@ class MainActivity : AppCompatActivity() {
         }
         binding.checkShowpassword.setOnClickListener {
             if (binding.checkShowpassword.isChecked){  binding.password.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                binding.repassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
                 binding.checkShowpassword.text = "Hide"
             }else {binding.password.transformationMethod = PasswordTransformationMethod.getInstance()
+                    binding.repassword.transformationMethod = PasswordTransformationMethod.getInstance()
                     binding.checkShowpassword.text = "show"
             }
         }
         binding.nextButton.setOnClickListener {
-
             letTry()
-
         }
     }
 
 fun letTry() {
-    val name = binding.firstName.text.toString()
+    val name = binding.firstNameEditText.text.toString()
 //    val email = binding.userName.text.toString()
     val pass1 = binding.password.text
     val pass2 = binding.repassword.text
