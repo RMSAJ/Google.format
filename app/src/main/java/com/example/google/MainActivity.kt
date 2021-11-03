@@ -2,7 +2,9 @@ package com.example.google
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
 import android.text.method.LinkMovementMethod
+import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.view.inputmethod.InputBinding
 import android.widget.Toast
@@ -23,6 +25,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(MainActivity2().intent)
             Toast.makeText(this, " you clicked", Toast.LENGTH_SHORT).show()
         }
+        binding.checkShowpassword.setOnClickListener {
+            if (binding.checkShowpassword.isChecked){  binding.password.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                binding.checkShowpassword.text = "Hide"
+            }else {binding.password.transformationMethod = PasswordTransformationMethod.getInstance()
+                    binding.checkShowpassword.text = "show"
+            }
+        }
         binding.nextButton.setOnClickListener {
 
             letTry()
@@ -33,13 +42,15 @@ class MainActivity : AppCompatActivity() {
 fun letTry() {
     val name = binding.firstName.text.toString()
 //    val email = binding.userName.text.toString()
-    val pass1 = binding.password.text.toString()
-    val pass2 = binding.repassword.text.toString()
+    val pass1 = binding.password.text
+    val pass2 = binding.repassword.text
     val showPass = binding.checkShowpassword.isChecked
 //    var passCondetion = binding.passConditions.text
 
     val anser = if (showPass == true && pass1 == pass2 ) {"here is your pass ${pass1}"}
                     else " I dare you to sign in "
+
+
 
     binding.careateAccountView.text = when (name) {
 
