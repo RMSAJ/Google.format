@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--   first name input by the user -->
 
-    <!--google icon text-->
-    <com.google.android.material.textfield.TextInputLayout
+<com.google.android.material.textfield.TextInputLayout
         android:id="@+id/firstName"
         android:layout_width="147dp"
         android:layout_height="55dp"
@@ -29,9 +29,61 @@
         </com.google.android.material.textfield.TextInputEditText>
 
 
+     </com.google.android.material.textfield.TextInputLayout>
+    <!--  last name input by the user   -->
+<com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/lasttName"
+         android:layout_width="150dp"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="50dp"
+         android:hint="@string/last_name"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.78"
+    app:layout_constraintStart_toStartOf="@id/firstName"
+    app:layout_constraintTop_toBottomOf="@id/careateAccountView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/lasttName_Edit_Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textShortMessage">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+
+     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="45dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_baseline_check_circle_24"
+        app:endIconContentDescription="@string/username_gmail_com"
+        android:hint="@string/username_gmail_com1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/firstName"
+        app:layout_constraintTop_toBottomOf="@id/careateAccountView"
+        app:layout_constraintVertical_bias="0.23000002">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userName_Edit_Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textEmailAddress">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+
     </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
+
+
+ <!--google icon text-->
+<ImageView
         android:id="@+id/googleIcon"
         android:layout_width="141dp"
         android:layout_height="55dp"
@@ -41,9 +93,7 @@
         android:scaleY=".4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/googlelogo_color"
-
-        />
+        app:srcCompat="@drawable/googlelogo_color" />
 <!--Create Account Text-->
 <TextView
         android:id="@+id/careateAccountView"
@@ -84,33 +134,11 @@
         tools:ignore="SmallSp" />
 <!--    username input by the user-->
 <EditText
-        android:id="@+id/userName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="45dp"
-        android:hint="userName                              gmail.com"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
 
-        app:layout_constraintStart_toStartOf="@id/firstName"
-        app:layout_constraintTop_toBottomOf="@id/careateAccountView"
-        app:layout_constraintVertical_bias="0.22000003" />
-<!--   first name input by the user -->
 
-<!--  last name input by the user   -->
-<EditText
-        android:id="@+id/lasttName"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:hint="@string/last_name"
-        android:inputType="textShortMessage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
-        app:layout_constraintStart_toStartOf="@id/firstName"
-        app:layout_constraintTop_toBottomOf="@id/careateAccountView" />
+         />
+
+
 <!--the password and re-pass-->
 <EditText
 
