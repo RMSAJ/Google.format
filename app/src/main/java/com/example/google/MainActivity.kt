@@ -20,9 +20,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.signIn.setOnClickListener {
-
-            Intent(this, MainActivity2::class.java)
-            startActivity(MainActivity2().intent)
+         val intent =  Intent(this, MainActivity2::class.java)
+            startActivity(intent)
             Toast.makeText(this, " you clicked", Toast.LENGTH_SHORT).show()
         }
         binding.checkShowpassword.setOnClickListener {
@@ -46,23 +45,13 @@ fun letTry() {
     val pass2 = binding.repassword.text
     val showPass = binding.checkShowpassword.isChecked
 //    var passCondetion = binding.passConditions.text
-
     val anser = if (showPass == true && pass1 == pass2 ) {"here is your pass ${pass1}"}
                     else " I dare you to sign in "
-
-
-
     binding.careateAccountView.text = when (name) {
-
         "" -> "whyyy"
-       binding.lasttName.text.toString() -> " they shouldnt be the same"
+       binding.lasttNameEditText.text.toString() -> " they shouldnt be the same"
        else -> "great job "
     }
-
-    binding.passConditions.text = anser
-
-
+    binding.careateAccountView.text = anser
 }
-
-
 }
