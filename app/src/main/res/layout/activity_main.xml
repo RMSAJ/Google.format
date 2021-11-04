@@ -18,7 +18,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/careateAccountView">
+        app:layout_constraintTop_toBottomOf="@id/careateAccountView"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/firstName_Edit_Text"
@@ -31,43 +33,50 @@
 
      </com.google.android.material.textfield.TextInputLayout>
     <!--  last name input by the user   -->
-<com.google.android.material.textfield.TextInputLayout
-         android:id="@+id/lasttName"
-         android:layout_width="150dp"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="50dp"
-         android:hint="@string/last_name"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.78"
-    app:layout_constraintStart_toStartOf="@id/firstName"
-    app:layout_constraintTop_toBottomOf="@id/careateAccountView">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lasttName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="147dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/last_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="@id/firstName"
+        app:layout_constraintTop_toBottomOf="@id/careateAccountView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/lasttName_Edit_Text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textShortMessage">
+            android:inputType="textShortMessage"
+            tools:layout_editor_absoluteX="-71dp"
+            tools:layout_editor_absoluteY="407dp">
 
         </com.google.android.material.textfield.TextInputEditText>
 
 
-     </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--google icon text-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userName"
-        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
-        app:endIconMode="custom"
-        app:endIconDrawable="@drawable/ic_baseline_check_circle_24"
-        app:endIconContentDescription="@string/username_gmail_com"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
         android:hint="@string/username_gmail_com1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/firstName"
-        app:layout_constraintTop_toBottomOf="@id/careateAccountView"
-        app:layout_constraintVertical_bias="0.23000002">
+        app:endIconContentDescription="@string/username_gmail_com"
+        app:endIconDrawable="@drawable/ic_baseline_check_circle_24"
+        app:endIconMode="custom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstName"
+        app:suffixText="@string/username_gmail_com">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/userName_Edit_Text"
@@ -79,11 +88,74 @@
 
 
     </com.google.android.material.textfield.TextInputLayout>
+    <!--the password and re-pass-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:autofillHints="password"
+        android:hint="@string/password"
+        app:endIconContentDescription="@string/password"
+        app:endIconDrawable="@drawable/ic_baseline_check_circle_24"
+        app:endIconMode="custom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65999997"
+        app:passwordToggleEnabled="true"
+        android:textColorHint="@color/black"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass_Edit_Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/repassword"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="@string/confirmPass"
+        app:endIconContentDescription="@string/confirmPass"
+        app:endIconDrawable="@drawable/ic_baseline_check_circle_24"
+        app:endIconMode="custom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintStart_toEndOf="@id/password"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65999997"
+        app:passwordToggleEnabled="true"
+        android:textColorHint="@color/black"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/repass_Edit_Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 
- <!--google icon text-->
-<ImageView
+
+    <ImageView
         android:id="@+id/googleIcon"
         android:layout_width="141dp"
         android:layout_height="55dp"
@@ -108,15 +180,18 @@
         app:layout_constraintTop_toBottomOf="@+id/googleIcon" />
 
 <!--    sign in by current email director-->
-<TextView
+    <TextView
         android:id="@+id/emailInsted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="172dp"
         android:text="@string/use_my_current_email_address_instead"
         android:textColor="#FF0000FF"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/userName"
+        app:layout_constraintEnd_toEndOf="@+id/userName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userName"
         app:layout_constraintTop_toBottomOf="@id/userName"
         app:layout_constraintVertical_bias="0.07999998" />
 <!--    username instructions details-->
@@ -134,43 +209,6 @@
         tools:ignore="SmallSp" />
 <!--    username input by the user-->
 
-
-
-<!--the password and re-pass-->
-<EditText
-
-        android:id="@+id/password"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:autofillHints="password"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:textColorHint="@color/black"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65999997"
-        app:passwordToggleEnabled="true"/>
-
-<EditText
-      android:id="@+id/repassword"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:hint="@string/confirmPass"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.72"
-        app:layout_constraintStart_toEndOf="@id/password"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65999997"
-        app:passwordToggleEnabled="true"/>
 
 <!--  password conditions -->
 <TextView

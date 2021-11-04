@@ -25,11 +25,11 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, " you clicked", Toast.LENGTH_SHORT).show()
         }
         binding.checkShowpassword.setOnClickListener {
-            if (binding.checkShowpassword.isChecked){  binding.password.transformationMethod = HideReturnsTransformationMethod.getInstance()
-                binding.repassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            if (binding.checkShowpassword.isChecked){  binding.passEditText.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                binding.repassEditText.transformationMethod = HideReturnsTransformationMethod.getInstance()
                 binding.checkShowpassword.text = "Hide"
-            }else {binding.password.transformationMethod = PasswordTransformationMethod.getInstance()
-                    binding.repassword.transformationMethod = PasswordTransformationMethod.getInstance()
+            }else {binding.passEditText.transformationMethod = PasswordTransformationMethod.getInstance()
+                    binding.repassEditText.transformationMethod = PasswordTransformationMethod.getInstance()
                     binding.checkShowpassword.text = "show"
             }
         }
@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity() {
 fun letTry() {
     val name = binding.firstNameEditText.text.toString()
 //    val email = binding.userName.text.toString()
-    val pass1 = binding.password.text
-    val pass2 = binding.repassword.text
+    val pass1 = binding.passEditText.text
+    val pass2 = binding.repassEditText.text
     val showPass = binding.checkShowpassword.isChecked
 //    var passCondetion = binding.passConditions.text
     val anser = if (showPass == true && pass1 == pass2 ) {"here is your pass ${pass1}"}
